@@ -10,10 +10,12 @@ const useStyles = makeStyles((ui: Theme) => ({
     backgroundColor: ui.palette.accents_1
   },
   content: {
-    maxWidth: 1024,
+    width: ui.layout.pageWidthWithMargin,
+    maxWidth: '100%',
+    boxSizing: 'border-box',
     margin: '0 auto',
-    transform: 'translateY(-35px)',
-    padding: `0 ${ui.layout.gap}`
+    padding: `0 ${ui.layout.pageMargin}`,
+    transform: 'translateY(-35px)'
   },
   row: {
     display: 'flex',
@@ -31,7 +33,7 @@ const useStyles = makeStyles((ui: Theme) => ({
   activity: {
     flex: 1
   },
-  '@media screen and (min-width: 1040px)': {
+  [`@media screen and (min-width: ${ui.layout.pageWidthWithMargin})`]: {
     row: {
       flexDirection: 'row',
       flexWrap: 'wrap'

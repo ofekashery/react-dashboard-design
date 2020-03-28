@@ -7,19 +7,20 @@ import SunIcon from './icons/sun';
 
 const useStyles = makeStyles((ui: Theme) => ({
   header: {
-    width: '100%',
+    width: ui.layout.pageWidthWithMargin,
+    maxWidth: '100%',
+    margin: '0 auto',
     backgroundColor: ui.palette.background,
-    padding: 0,
     fontSize: 16,
     height: 60,
     zIndex: 15
   },
   headerContent: {
-    extend: 'navContent',
+    height: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0 20px'
+    padding: `0 ${ui.layout.pageMargin}`
   },
   headerTitle: {
     fontWeight: 500,
@@ -35,11 +36,12 @@ const useStyles = makeStyles((ui: Theme) => ({
     zIndex: 15
   },
   navContent: {
-    maxWidth: 1024,
+    width: ui.layout.pageWidthWithMargin,
+    maxWidth: '100%',
     height: '100%',
     margin: '0 auto',
     '& .tabs header': {
-      padding: '0 20px',
+      padding: `0 ${ui.layout.pageMargin}`,
       borderBottom: 'none !important',
       flexWrap: 'nowrap !important',
       overflowY: 'hidden',

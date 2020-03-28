@@ -11,8 +11,11 @@ const useStyles = makeStyles((ui: Theme) => ({
   content: {
     display: 'flex',
     flexDirection: 'row',
-    maxWidth: 1024,
-    margin: '0 auto'
+    width: ui.layout.pageWidthWithMargin,
+    maxWidth: '100%',
+    boxSizing: 'border-box',
+    margin: '0 auto',
+    padding: `0 ${ui.layout.pageMargin}`
   },
   avatar: {
     width: '100px !important',
@@ -34,7 +37,7 @@ const useStyles = makeStyles((ui: Theme) => ({
     lineHeight: 1
   },
   createProjectButton: {},
-  '@media screen and (max-width: 1040px)': {
+  [`@media screen and (max-width: ${ui.layout.pageWidthWithMargin})`]: {
     createProjectButton: {
       display: 'none !important'
     },

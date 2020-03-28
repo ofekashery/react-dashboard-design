@@ -9,7 +9,7 @@ const useStyles = makeStyles((ui: Theme) => ({
     borderTop: `solid 1px ${ui.palette.accents_2}`,
     textAlign: 'center'
   },
-  '@media screen and (min-width: 1040px)': {
+  [`@media screen and (min-width: ${ui.layout.pageWidthWithMargin})`]: {
     root: {
       textAlign: 'start !important'
     }
