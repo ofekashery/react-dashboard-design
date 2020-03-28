@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, Link } from '@zeit-ui/react';
+import { ZeitUIThemes, Text, Link } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import Theme from '../../typings/Theme';
 import EventListItem from './EventListItem';
 import ProjectCard from './ProjectCard';
 
-const useStyles = makeStyles((ui: Theme) => ({
+const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
     backgroundColor: ui.palette.accents_1
   },

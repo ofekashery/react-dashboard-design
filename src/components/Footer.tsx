@@ -1,9 +1,8 @@
 import React from 'react';
-import { Text, Link, Code } from '@zeit-ui/react';
+import { ZeitUIThemes, Text, Link, Code } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import Theme from '../../typings/Theme';
 
-const useStyles = makeStyles((ui: Theme) => ({
+const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
     padding: '0 40px',
     borderTop: `solid 1px ${ui.palette.accents_2}`,

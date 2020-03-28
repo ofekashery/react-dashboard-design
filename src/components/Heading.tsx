@@ -1,9 +1,8 @@
 import React from 'react';
-import { Avatar, Button, Text, Link } from '@zeit-ui/react';
+import { ZeitUIThemes, Avatar, Button, Text, Link } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import Theme from '../../typings/Theme';
 
-const useStyles = makeStyles((ui: Theme) => ({
+const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
     padding: '45px 20px 90px',
     borderBottom: `solid 1px ${ui.palette.accents_2}`
@@ -68,7 +67,7 @@ const Heading = () => {
     <div className={classes.root}>
       <div className={classes.content}>
         <Avatar
-          // alt="Your Avatar"
+          alt="Your Avatar"
           className={classes.avatar}
           src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=180"
         />

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Avatar, Button, Tabs, useTheme } from '@zeit-ui/react';
+import { ZeitUIThemes, Avatar, Button, Tabs, useTheme } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import Theme from '../../typings/Theme';
 import MoonIcon from './icons/moon';
 import SunIcon from './icons/sun';
 
-const useStyles = makeStyles((ui: Theme) => ({
+const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   header: {
     width: ui.layout.pageWidthWithMargin,
     maxWidth: '100%',

@@ -1,7 +1,14 @@
 import React from 'react';
-import { Button, Text, Link, Card, Dot, Tag } from '@zeit-ui/react';
+import {
+  ZeitUIThemes,
+  Button,
+  Text,
+  Link,
+  Card,
+  Dot,
+  Tag
+} from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import Theme from '../../typings/Theme';
 
 interface Props {
   projectId: string;
@@ -9,7 +16,7 @@ interface Props {
   repo: string;
 }
 
-const useStyles = makeStyles((ui: Theme) => ({
+const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   card: {
     padding: '0 !important',
     marginBottom: `calc(${ui.layout.gap}*2) !important`

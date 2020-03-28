@@ -1,7 +1,6 @@
 import React from 'react';
-import { Avatar, Text } from '@zeit-ui/react';
+import { ZeitUIThemes, Avatar, Text } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import Theme from '../../typings/Theme';
 
 interface Props {
   username: string;
@@ -9,7 +8,7 @@ interface Props {
   children: string | React.ReactNode;
 }
 
-const useStyles = makeStyles((ui: Theme) => ({
+const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
     borderBottom: `solid 1px ${ui.palette.accents_2}`,
     padding: '10px 0px',
@@ -39,7 +38,7 @@ const EventListItem = ({ children, username, created }: Props) => {
   return (
     <div className={classes.root}>
       <Avatar
-        // alt={`${username} Avatar`}
+        alt={`${username} Avatar`}
         className={classes.avatar}
         src={`https://zeit.co/api/www/avatar/?u=${username}&s=64`}
       />
