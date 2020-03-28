@@ -90,7 +90,7 @@ const Menu = ({ toggleDarkMode }: any) => {
             <svg viewBox="0 0 226 200" width={28} height={25}>
               <path d="M113 0.5L226 200H0z" fill="currentColor" />
             </svg>
-            <div className={classes.headerTitle}>ZEIT Admin Dashboard</div>
+            <div className={classes.headerTitle}>ZEIT Dashboard Dashboard</div>
           </div>
           <div className={classes.sidebar}>
             <Button

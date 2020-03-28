@@ -1,7 +1,7 @@
 ![Screenshot](https://user-images.githubusercontent.com/16443111/77804157-f1f1a080-708f-11ea-816e-9c8a3727c1f9.png)
 
 
-## ZEIT Admin Dashboard Template
+## ZEIT Dashboard Template
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

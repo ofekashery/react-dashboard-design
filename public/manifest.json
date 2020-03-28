@@ -1,18 +1,18 @@
 {
-  "short_name": "ZEIT Admin",
-  "name": "ZEIT Admin Dashboard Template",
+  "short_name": "ZEIT",
+  "name": "ZEIT Dashboard Template",
   "icons": [
     {
       "src": "https://assets.zeit.co/image/upload/v1573246280/front/favicon/round-2/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
-  },
-  {
+    },
+    {
       "src": "https://assets.zeit.co/image/upload/v1573246280/front/favicon/round-2/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
-  }
-],
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

@@ -1,5 +1,5 @@
 {
-  "name": "zeit-admin-template",
+  "name": "zeit-dashboard-template",
   "description": "ZEIT Admin Dashboard Template",
   "version": "0.1.0",
   "author": "Ofek Ashery",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ofekashery/zeit-admin-template.git"
+    "url": "git+https://github.com/ofekashery/zeit-dashboard-template.git"
   },
   "bugs": {
-    "url": "https://github.com/ofekashery/zeit-admin-template/issues"
+    "url": "https://github.com/ofekashery/zeit-dashboard-template/issues"
   },
   "dependencies": {
-    "@zeit-ui/react": "0.0.1-alpha.38",
+    "@zeit-ui/react": "0.0.1-alpha.40",
     "cra-template-typescript": "1.0.3",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",

@@ -4,7 +4,7 @@ import Heading from './components/Heading';
 import Content from './components/Content';
 import Footer from './components/Footer';
 
-const App = ({ toggleDarkMode }: any) => {
+const Dashboard = ({ toggleDarkMode }: any) => {
   return (
     <>
       <Menu toggleDarkMode={toggleDarkMode} />
@@ -15,4 +15,4 @@ const App = ({ toggleDarkMode }: any) => {
   );
 };
 
-export default App;
+export default Dashboard;
