@@ -89,6 +89,7 @@ const Heading = () => {
             <Link
               href="https://github.com/ofekashery"
               target="_blank"
+              rel="noopener"
               pure
               underline
             >

@@ -24,13 +24,19 @@ const Footer = () => {
         <Link
           href="https://github.com/ofekashery"
           target="_blank"
+          rel="noopener"
           pure
           underline
         >
           Ofek Ashery
         </Link>
         {' using '}
-        <Link href="https://github.com/zeit-ui/react" target="_blank" pure>
+        <Link
+          href="https://github.com/zeit-ui/react"
+          target="_blank"
+          rel="noopener"
+          pure
+        >
           <Code>@zeit-ui/react</Code>
         </Link>
         .

@@ -107,14 +107,24 @@ const ProjectCard = ({ projectId, created, repo }: Props) => {
       </div>
       <div className={classes.content}>
         <Dot type="success" className={classes.dot}>
-          <Link href={`https://${projectId}.now.sh`} target="_blank" pure>
+          <Link
+            href={`https://${projectId}.now.sh`}
+            target="_blank"
+            rel="noopener"
+            pure
+          >
             {projectId}.now.sh
           </Link>
           <Tag className={classes.tag}>Production</Tag>
           <span className={classes.created}>{created}</span>
         </Dot>
         <Dot type="success" className={classes.dot}>
-          <Link href={`https://${projectId}.now.sh`} target="_blank" pure>
+          <Link
+            href={`https://${projectId}.now.sh`}
+            target="_blank"
+            rel="noopener"
+            pure
+          >
             {projectId}-oa71gi2.now.sh
           </Link>
           <Tag className={classes.tag}>Latest</Tag>
@@ -124,6 +134,7 @@ const ProjectCard = ({ projectId, created, repo }: Props) => {
       <Link
         href={`https://github.com/${repo}`}
         target="_blank"
+        rel="noopener"
         className={classes.footer}
         pure
       >
