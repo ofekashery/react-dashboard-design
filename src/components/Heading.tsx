@@ -4,7 +4,7 @@ import makeStyles from '../makeStyles';
 
 const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
-    padding: '45px 20px 90px',
+    padding: `calc(${ui.layout.gap} * 2) ${ui.layout.pageMargin} calc(${ui.layout.gap} * 3)`,
     borderBottom: `solid 1px ${ui.palette.accents_2}`
   },
   content: {
@@ -13,8 +13,7 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
     width: ui.layout.pageWidthWithMargin,
     maxWidth: '100%',
     boxSizing: 'border-box',
-    margin: '0 auto',
-    padding: `0 ${ui.layout.pageMargin}`
+    margin: '0 auto'
   },
   avatar: {
     width: '100px !important',
@@ -42,7 +41,8 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
     },
     avatar: {
       width: '80px !important',
-      height: '80px !important'
+      height: '80px !important',
+      marginRight: '20px !important'
     },
     username: {
       fontSize: 24
