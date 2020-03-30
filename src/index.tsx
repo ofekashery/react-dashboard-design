@@ -6,15 +6,13 @@ import * as serviceWorker from './serviceWorker';
 import { JssProvider } from 'react-jss';
 
 const App = () => {
-  const [type, setType] = useState<'light' | 'dark'>('light');
-  const toggleDarkMode = (theme: ZeitUIThemes): void => {
-    const nextTheme = theme.type === 'dark' ? 'light' : 'dark';
-    setType(nextTheme);
-  };
+  const [themeType, setThemeType] = useState<'light' | 'dark'>('light');
+  const toggleDarkMode = (): void =>
+    setThemeType(themeType === 'dark' ? 'light' : 'dark');
 
   return (
     <JssProvider id={{ minify: true }}>
-      <ZEITUIProvider theme={{ type }}>
+      <ZEITUIProvider theme={{ type: themeType }}>
         <CSSBaseline />
         <Dashboard toggleDarkMode={toggleDarkMode} />
       </ZEITUIProvider>

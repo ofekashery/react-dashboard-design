@@ -79,7 +79,6 @@ const Menu = ({ toggleDarkMode }: any) => {
   const classes = useStyles();
   const theme = useTheme();
   const isDark = theme.type === 'dark';
-  const switchThemes = () => toggleDarkMode(theme);
 
   return (
     <>
@@ -97,7 +96,7 @@ const Menu = ({ toggleDarkMode }: any) => {
               className={classes.themeIcon}
               auto
               type="abort"
-              onClick={switchThemes}
+              onClick={toggleDarkMode}
             >
               {isDark ? (
                 <SunIcon width={16} height={16} />
