@@ -21,22 +21,11 @@ const Footer = () => {
     <div className={classes.root}>
       <Text>
         {'Created by '}
-        <Link
-          href="https://github.com/ofekashery"
-          target="_blank"
-          rel="noopener"
-          pure
-          underline
-        >
+        <Link href="https://github.com/ofekashery" target="_blank" rel="noopener" pure underline>
           Ofek Ashery
         </Link>
         {' using '}
-        <Link
-          href="https://github.com/zeit-ui/react"
-          target="_blank"
-          rel="noopener"
-          pure
-        >
+        <Link href="https://github.com/zeit-ui/react" target="_blank" rel="noopener" pure>
           <Code>@zeit-ui/react</Code>
         </Link>
         .

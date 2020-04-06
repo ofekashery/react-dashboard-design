@@ -1,6 +1,7 @@
 import React from 'react';
 import { ZeitUIThemes, Avatar, Button, Tabs, useTheme } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
+import ZeitIcon from './icons/zeit';
 import MoonIcon from './icons/moon';
 import SunIcon from './icons/sun';
 
@@ -85,9 +86,7 @@ const Menu = ({ toggleDarkMode }: any) => {
       <div className={classes.header}>
         <div className={classes.headerContent}>
           <div style={{ display: 'flex' }}>
-            <svg viewBox="0 0 226 200" width={28} height={25}>
-              <path d="M113 0.5L226 200H0z" fill="currentColor" />
-            </svg>
+            <ZeitIcon width={28} height={25} />
             <div className={classes.headerTitle}>ZEIT Dashboard Dashboard</div>
           </div>
           <div className={classes.sidebar}>
@@ -98,11 +97,7 @@ const Menu = ({ toggleDarkMode }: any) => {
               type="abort"
               onClick={toggleDarkMode}
             >
-              {isDark ? (
-                <SunIcon width={16} height={16} />
-              ) : (
-                <MoonIcon width={16} height={16} />
-              )}
+              {isDark ? <SunIcon width={16} height={16} /> : <MoonIcon width={16} height={16} />}
             </Button>
             <Avatar text="OA" />
           </div>
@@ -111,13 +106,13 @@ const Menu = ({ toggleDarkMode }: any) => {
       <nav className={classes.nav}>
         <div className={classes.navContent}>
           <Tabs initialValue="1">
-            <Tabs.Item label="Overview" value="1"></Tabs.Item>
-            <Tabs.Item label="Projects" value="2"></Tabs.Item>
-            <Tabs.Item label="Integrations" value="3"></Tabs.Item>
-            <Tabs.Item label="Activity" value="4"></Tabs.Item>
-            <Tabs.Item label="Domains" value="5"></Tabs.Item>
-            <Tabs.Item label="Usage" value="6"></Tabs.Item>
-            <Tabs.Item label="Settings" value="7"></Tabs.Item>
+            <Tabs.Item label="Overview" value="1" />
+            <Tabs.Item label="Projects" value="2" />
+            <Tabs.Item label="Integrations" value="3" />
+            <Tabs.Item label="Activity" value="4" />
+            <Tabs.Item label="Domains" value="5" />
+            <Tabs.Item label="Usage" value="6" />
+            <Tabs.Item label="Settings" value="7" />
           </Tabs>
         </div>
       </nav>

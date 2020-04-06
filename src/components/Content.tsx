@@ -74,16 +74,8 @@ const Content = () => {
       <div className={classes.content}>
         <div className={classes.row}>
           <div className={classes.projects}>
-            <ProjectCard
-              projectId="zeit-dashboard-template"
-              repo="ofekashery/zeit-dashboard-template"
-              created="4m"
-            />
-            <ProjectCard
-              projectId="zeit-style"
-              repo="zeit-ui/react"
-              created="2d"
-            />
+            <ProjectCard projectId="zeit-dashboard-template" repo="ofekashery/zeit-dashboard-template" created="4m" />
+            <ProjectCard projectId="zeit-style" repo="zeit-ui/react" created="2d" />
             <ProjectCard projectId="docs" repo="zeit/docs" created="5d" />
             <Text className={classes.viewAll}>
               <Link color pure>
