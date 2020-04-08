@@ -4,7 +4,6 @@ import makeStyles from '../makeStyles';
 
 const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
-    padding: `calc(${ui.layout.gap} * 2) ${ui.layout.pageMargin} calc(${ui.layout.gap} * 3)`,
     borderBottom: `solid 1px ${ui.palette.accents_2}`
   },
   content: {
@@ -12,6 +11,7 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
     flexDirection: 'row',
     width: ui.layout.pageWidthWithMargin,
     maxWidth: '100%',
+    padding: `calc(${ui.layout.gap} * 2) ${ui.layout.pageMargin} calc(${ui.layout.gap} * 3)`,
     boxSizing: 'border-box',
     margin: '0 auto'
   },
