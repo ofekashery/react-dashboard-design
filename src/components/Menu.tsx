@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ZeitUIThemes, Avatar, Button, Tabs, useTheme } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
 import ZeitIcon from './icons/zeit';
@@ -34,6 +34,10 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
     backgroundColor: ui.palette.background,
     borderBottom: `solid 1px ${ui.palette.accents_2}`,
     zIndex: 15
+  },
+  navFixed: {
+    borderBottom: ui.type === 'light' && 'none',
+    boxShadow: ui.type === 'light' && 'rgba(0, 0, 0, 0.1) 0 0 15px 0'
   },
   navContent: {
     width: ui.layout.pageWidthWithMargin,
@@ -79,7 +83,17 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
 const Menu = ({ toggleDarkMode }: any) => {
   const classes = useStyles();
   const theme = useTheme();
+  const [fixed, setFixed] = useState(false);
   const isDark = theme.type === 'dark';
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      const shouldFixed = document.documentElement.scrollTop > 60;
+      if (fixed !== shouldFixed) setFixed(shouldFixed);
+    };
+    document.addEventListener('scroll', scrollHandler);
+    return () => document.removeEventListener('scroll', scrollHandler);
+  }, [fixed]);
 
   return (
     <>
@@ -103,7 +117,7 @@ const Menu = ({ toggleDarkMode }: any) => {
           </div>
         </div>
       </div>
-      <nav className={classes.nav}>
+      <nav className={classes.nav + ' ' + (fixed ? classes.navFixed : '')}>
         <div className={classes.navContent}>
           <Tabs initialValue="1">
             <Tabs.Item label="Overview" value="1" />

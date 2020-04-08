@@ -3,7 +3,6 @@ import { useTheme } from '@zeit-ui/react';
 
 const ZeitIcon = ({ width = 24, height = 24 }: any) => {
   const theme = useTheme();
-  console.log(theme);
   return (
     <svg width={width} height={height} viewBox="0 0 226 200" aria-label="zeit">
       <defs>
