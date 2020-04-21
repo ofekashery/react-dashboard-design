@@ -74,7 +74,11 @@ const Content = () => {
       <div className={classes.content}>
         <div className={classes.row}>
           <div className={classes.projects}>
-            <ProjectCard projectId="zeit-dashboard-template" repo="ofekashery/zeit-dashboard-template" created="4m" />
+            <ProjectCard
+              projectId="vercel-dashboard-template"
+              repo="ofekashery/vercel-dashboard-template"
+              created="4m"
+            />
             <ProjectCard projectId="zeit-style" repo="zeit-ui/react" created="2d" />
             <ProjectCard projectId="docs" repo="zeit/docs" created="5d" />
             <Text className={classes.viewAll}>
@@ -88,7 +92,7 @@ const Content = () => {
               Recent Activity
             </Text>
             <EventListItem username="ofekashery" created="4m">
-              Ofek deployed zeit-dashboard-template to <b>production</b>
+              Ofek deployed vercel-dashboard-template to <b>production</b>
             </EventListItem>
             <EventListItem username="evilrabbit" created="2d">
               You deployed zeit-ui to <b>production</b>

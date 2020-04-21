@@ -1,6 +1,6 @@
 {
-  "name": "zeit-dashboard-template",
-  "description": "ZEIT Admin Dashboard Template",
+  "name": "vercel-dashboard-template",
+  "description": "Vercel (formerly ZEIT) Admin Dashboard Template",
   "version": "0.1.0",
   "author": "Ofek Ashery",
   "license": "MIT",
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ofekashery/zeit-dashboard-template.git"
+    "url": "git+https://github.com/ofekashery/vercel-dashboard-template.git"
   },
   "bugs": {
-    "url": "https://github.com/ofekashery/zeit-dashboard-template/issues"
+    "url": "https://github.com/ofekashery/vercel-dashboard-template/issues"
   },
   "dependencies": {
     "@zeit-ui/react": "0.0.1-beta.15",

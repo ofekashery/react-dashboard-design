@@ -40,7 +40,7 @@ const EventListItem = ({ children, username, created }: Props) => {
       <Avatar
         alt={`${username} Avatar`}
         className={classes.avatar}
-        src={`https://zeit.co/api/www/avatar/?u=${username}&s=64`}
+        src={`https://vercel.com/api/www/avatar/?u=${username}&s=64`}
       />
       <Text className={classes.message}>{children}</Text>
       <Text className={classes.created}>{created}</Text>

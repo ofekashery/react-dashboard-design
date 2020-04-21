@@ -1,6 +1,6 @@
 {
-  "short_name": "ZEIT",
-  "name": "ZEIT Dashboard Template",
+  "short_name": "Vercel",
+  "name": "Vercel Dashboard Template",
   "icons": [
     {
       "src": "https://assets.zeit.co/image/upload/v1573246280/front/favicon/round-2/android-chrome-192x192.png",

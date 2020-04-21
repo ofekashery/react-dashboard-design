@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ZeitUIThemes, Avatar, Button, Tabs, useTheme } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import ZeitIcon from './icons/zeit';
+import VercelIcon from './icons/vercel';
 import MoonIcon from './icons/moon';
 import SunIcon from './icons/sun';
 
@@ -100,8 +100,8 @@ const Menu = ({ toggleDarkMode }: any) => {
       <div className={classes.header}>
         <div className={classes.headerContent}>
           <div style={{ display: 'flex' }}>
-            <ZeitIcon width={28} height={25} />
-            <div className={classes.headerTitle}>ZEIT Dashboard Dashboard</div>
+            <VercelIcon width={28} height={25} />
+            <div className={classes.headerTitle}>Vercel Dashboard Dashboard</div>
           </div>
           <div className={classes.sidebar}>
             <Button
