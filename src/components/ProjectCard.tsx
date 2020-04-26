@@ -1,14 +1,7 @@
 import React from 'react';
-import {
-  ZeitUIThemes,
-  Button,
-  Text,
-  Link,
-  Card,
-  Dot,
-  Tag
-} from '@zeit-ui/react';
+import { ZeitUIThemes, Button, Text, Link, Card, Dot, Tag } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
+import * as Icons from '@ofekashery/vercel-icons';
 
 interface Props {
   projectId: string;
@@ -19,16 +12,16 @@ interface Props {
 const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   card: {
     padding: '0 !important',
-    marginBottom: `calc(${ui.layout.gap}*2) !important`
+    marginBottom: `calc(${ui.layout.gap}*1.5) !important`
   },
   title: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    margin: ui.layout.gap
-  },
-  content: {
-    margin: `0 ${ui.layout.gap} ${ui.layout.gap} ${ui.layout.gap}`
+    marginBottom: ui.layout.gap,
+    '& h3': {
+      margin: 0
+    }
   },
   created: {
     fontSize: 14,
@@ -77,16 +70,14 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
     padding: '3px 7px !important',
     borderRadius: '16px !important',
     height: 'unset !important',
-    marginLeft: 8
+    marginLeft: 8,
+    color: `${ui.palette.foreground} !important`
   },
   footer: {
     display: 'flex !important',
     alignItems: 'center !important',
     height: 50,
-    width: '100% !important',
-    padding: `0 ${ui.layout.gap}`,
-    borderTop: `solid 1px ${ui.palette.accents_2}`,
-    borderRadius: `0 0 ${ui.layout.radius} ${ui.layout.radius}`
+    width: '100% !important'
   },
   repo: {
     fontSize: 14,
@@ -107,46 +98,30 @@ const ProjectCard = ({ projectId, created, repo }: Props) => {
       </div>
       <div className={classes.content}>
         <Dot type="success" className={classes.dot}>
-          <Link
-            href={`https://${projectId}.now.sh`}
-            target="_blank"
-            rel="noopener"
-            pure
-          >
+          <Link href={`https://${projectId}.now.sh`} target="_blank" rel="noopener" pure>
             {projectId}.now.sh
           </Link>
-          <Tag className={classes.tag}>Production</Tag>
+          <Tag className={classes.tag} type="secondary">
+            Production
+          </Tag>
           <span className={classes.created}>{created}</span>
         </Dot>
         <Dot type="success" className={classes.dot}>
-          <Link
-            href={`https://${projectId}.now.sh`}
-            target="_blank"
-            rel="noopener"
-            pure
-          >
+          <Link href={`https://${projectId}.now.sh`} target="_blank" rel="noopener" pure>
             {projectId}-oa71gi2.now.sh
           </Link>
-          <Tag className={classes.tag}>Latest</Tag>
+          <Tag className={classes.tag} type="secondary">
+            Latest
+          </Tag>
           <span className={classes.created}>{created}</span>
         </Dot>
       </div>
-      <Link
-        href={`https://github.com/${repo}`}
-        target="_blank"
-        rel="noopener"
-        className={classes.footer}
-        pure
-      >
-        <svg width="14" height="14" viewBox="0 0 14 14" aria-label="github">
-          <path
-            d="M7 .175c-3.872 0-7 3.128-7 7 0 3.084 2.013 5.71 4.79 6.65.35.066.482-.153.482-.328v-1.181c-1.947.415-2.363-.941-2.363-.941-.328-.81-.787-1.028-.787-1.028-.634-.438.044-.416.044-.416.7.044 1.071.722 1.071.722.635 1.072 1.641.766 2.035.59.066-.459.24-.765.437-.94-1.553-.175-3.193-.787-3.193-3.456 0-.766.262-1.378.721-1.881-.065-.175-.306-.897.066-1.86 0 0 .59-.197 1.925.722a6.754 6.754 0 0 1 1.75-.24c.59 0 1.203.087 1.75.24 1.335-.897 1.925-.722 1.925-.722.372.963.131 1.685.066 1.86.46.48.722 1.115.722 1.88 0 2.691-1.641 3.282-3.194 3.457.24.219.481.634.481 1.29v1.926c0 .197.131.415.481.328C11.988 12.884 14 10.259 14 7.175c0-3.872-3.128-7-7-7z"
-            fill="currentColor"
-            fillRule="nonzero"
-          ></path>
-        </svg>
-        <Text className={classes.repo}>{repo}</Text>
-      </Link>
+      <Card.Footer className={classes.footer}>
+        <Link href={`https://github.com/${repo}`} target="_blank" rel="noopener" className={classes.footer} pure>
+          <Icons.Github size={14} />
+          <Text className={classes.repo}>{repo}</Text>
+        </Link>
+      </Card.Footer>
     </Card>
   );
 };

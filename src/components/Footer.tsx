@@ -4,7 +4,7 @@ import makeStyles from '../makeStyles';
 
 const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
-    padding: '0 40px',
+    padding: '8px 42px',
     borderTop: `solid 1px ${ui.palette.accents_2}`,
     textAlign: 'center'
   },

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ZeitUIThemes, Avatar, Button, Tabs, useTheme } from '@zeit-ui/react';
+import { ZeitUIThemes, Avatar, Button, Tabs, useTheme, Popover, Link } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import VercelIcon from './icons/vercel';
-import MoonIcon from './icons/moon';
-import SunIcon from './icons/sun';
+import * as Icons from '@ofekashery/vercel-icons';
 
 const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   header: {
@@ -77,8 +75,29 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
     alignItems: 'center !important',
     marginRight: 5,
     padding: '0 !important'
+  },
+  popover: {
+    width: '180px !important'
   }
 }));
+
+const popoverContent = () => (
+  <>
+    <Popover.Item title>
+      <span>User Settings</span>
+    </Popover.Item>
+    <Popover.Item>
+      <Link pure>Teams</Link>
+    </Popover.Item>
+    <Popover.Item>
+      <Link pure>GitHub</Link>
+    </Popover.Item>
+    <Popover.Item line />
+    <Popover.Item>
+      <Link pure>Logout</Link>
+    </Popover.Item>
+  </>
+);
 
 const Menu = ({ toggleDarkMode }: any) => {
   const classes = useStyles();
@@ -100,7 +119,9 @@ const Menu = ({ toggleDarkMode }: any) => {
       <div className={classes.header}>
         <div className={classes.headerContent}>
           <div style={{ display: 'flex' }}>
-            <VercelIcon width={28} height={25} />
+            <svg width={28} height={25} viewBox="0 0 75 65" fill={theme.palette.foreground}>
+              <path d="M37.59.25l36.95 64H.64l36.95-64z" />
+            </svg>
             <div className={classes.headerTitle}>Vercel Dashboard Dashboard</div>
           </div>
           <div className={classes.sidebar}>
@@ -111,9 +132,11 @@ const Menu = ({ toggleDarkMode }: any) => {
               type="abort"
               onClick={toggleDarkMode}
             >
-              {isDark ? <SunIcon width={16} height={16} /> : <MoonIcon width={16} height={16} />}
+              {isDark ? <Icons.Sun size={16} /> : <Icons.Moon size={16} />}
             </Button>
-            <Avatar text="OA" />
+            <Popover content={popoverContent} placement="bottomEnd" portalClassName={classes.popover}>
+              <Avatar text="OA" />
+            </Popover>
           </div>
         </div>
       </div>

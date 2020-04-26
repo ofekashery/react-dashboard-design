@@ -19,7 +19,8 @@
     "url": "https://github.com/ofekashery/vercel-dashboard-template/issues"
   },
   "dependencies": {
-    "@zeit-ui/react": "0.0.1-beta.15",
+    "@ofekashery/vercel-icons": "^1.0.1",
+    "@zeit-ui/react": "1.0.0-rc.1",
     "cra-template-typescript": "1.0.3",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
