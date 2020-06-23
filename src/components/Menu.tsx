@@ -122,7 +122,7 @@ const Menu = ({ toggleDarkMode }: any) => {
             <svg width={28} height={25} viewBox="0 0 75 65" fill={theme.palette.foreground}>
               <path d="M37.59.25l36.95 64H.64l36.95-64z" />
             </svg>
-            <div className={classes.headerTitle}>Vercel Dashboard Dashboard</div>
+            <div className={classes.headerTitle}>Vercel Dashboard Template</div>
           </div>
           <div className={classes.sidebar}>
             <Button
