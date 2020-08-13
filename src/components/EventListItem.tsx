@@ -4,6 +4,7 @@ import makeStyles from '../makeStyles';
 
 interface Props {
   username: string;
+  avatar: string;
   created: string;
   children: string | React.ReactNode;
 }
@@ -33,15 +34,11 @@ const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   }
 }));
 
-const EventListItem = ({ children, username, created }: Props) => {
+const EventListItem = ({ children, username, avatar, created }: Props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Avatar
-        alt={`${username} Avatar`}
-        className={classes.avatar}
-        src={`https://vercel.com/api/www/avatar/?u=${username}&s=64`}
-      />
+      <Avatar alt={`${username} Avatar`} className={classes.avatar} src={avatar} />
       <Text className={classes.message}>{children}</Text>
       <Text className={classes.created}>{created}</Text>
     </div>

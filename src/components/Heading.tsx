@@ -1,7 +1,7 @@
 import React from 'react';
 import { ZeitUIThemes, Avatar, Button, Text, Link } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import * as Icons from '@ofekashery/vercel-icons';
+import * as Icons from 'react-feather';
 
 const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   root: {
@@ -67,11 +67,11 @@ const Heading = () => {
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        <Avatar alt="Your Avatar" className={classes.avatar} src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=180" />
+        <Avatar alt="Your Avatar" className={classes.avatar} src="/assets/avatar.svg" />
         <div className={classes.name}>
           <div className={classes.title}>
             <Text h2 className={classes.username}>
-              Evil Rabbit
+              Ofek Ashery
             </Text>
             <Button className={classes.createProjectButton} type="secondary" auto>
               Create Project
@@ -81,7 +81,7 @@ const Heading = () => {
             <Text className={classes.integrationsTitle}>Git Integrations</Text>
             <Link href="https://github.com/ofekashery" target="_blank" rel="noopener" pure underline>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Icons.Github size={16} aria-label="Github" />
+                <Icons.GitHub size={16} aria-label="Github" />
                 <Text className={classes.integrationsUsername}>ofekashery</Text>
               </div>
             </Link>

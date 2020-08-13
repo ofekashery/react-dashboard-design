@@ -1,8 +1,8 @@
-![Screenshot](https://user-images.githubusercontent.com/16443111/77804157-f1f1a080-708f-11ea-816e-9c8a3727c1f9.png)
+![Screenshot](https://user-images.githubusercontent.com/16443111/90181621-70d64400-ddb9-11ea-9ef7-f2611bbc384d.png)
 
-## Vercel (formerly ZEIT) Dashboard Template
+## React Dashboard Design
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project inspired by and based on the by [Vercel™](https://vercel.com) Design System.
 
 ## Getting Started
 

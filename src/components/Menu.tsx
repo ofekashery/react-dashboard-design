@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ZeitUIThemes, Avatar, Button, Tabs, useTheme, Popover, Link } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import * as Icons from '@ofekashery/vercel-icons';
+import * as Icons from 'react-feather';
 
 const useStyles = makeStyles((ui: ZeitUIThemes) => ({
   header: {
@@ -119,10 +119,7 @@ const Menu = ({ toggleDarkMode }: any) => {
       <div className={classes.header}>
         <div className={classes.headerContent}>
           <div style={{ display: 'flex' }}>
-            <svg width={28} height={25} viewBox="0 0 75 65" fill={theme.palette.foreground}>
-              <path d="M37.59.25l36.95 64H.64l36.95-64z" />
-            </svg>
-            <div className={classes.headerTitle}>Vercel Dashboard Template</div>
+            <div className={classes.headerTitle}>React Dashboard Design</div>
           </div>
           <div className={classes.sidebar}>
             <Button

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ZeitUIThemes, Button, Text, Link, Card, Dot, Tag } from '@zeit-ui/react';
 import makeStyles from '../makeStyles';
-import * as Icons from '@ofekashery/vercel-icons';
+import * as Icons from 'react-feather';
 
 interface Props {
   projectId: string;
@@ -98,18 +98,14 @@ const ProjectCard = ({ projectId, created, repo }: Props) => {
       </div>
       <div className={classes.content}>
         <Dot type="success" className={classes.dot}>
-          <Link href={`https://${projectId}.now.sh`} target="_blank" rel="noopener" pure>
-            {projectId}.now.sh
-          </Link>
+          <Link pure>{projectId}.vercel.app</Link>
           <Tag className={classes.tag} type="secondary">
             Production
           </Tag>
           <span className={classes.created}>{created}</span>
         </Dot>
         <Dot type="success" className={classes.dot}>
-          <Link href={`https://${projectId}.now.sh`} target="_blank" rel="noopener" pure>
-            {projectId}-oa71gi2.now.sh
-          </Link>
+          <Link pure>{projectId}-oa71gi2.vercel.app</Link>
           <Tag className={classes.tag} type="secondary">
             Latest
           </Tag>
@@ -117,10 +113,8 @@ const ProjectCard = ({ projectId, created, repo }: Props) => {
         </Dot>
       </div>
       <Card.Footer className={classes.footer}>
-        <Link href={`https://github.com/${repo}`} target="_blank" rel="noopener" className={classes.footer} pure>
-          <Icons.Github size={14} />
-          <Text className={classes.repo}>{repo}</Text>
-        </Link>
+        <Icons.GitHub size={14} />
+        <Text className={classes.repo}>{repo}</Text>
       </Card.Footer>
     </Card>
   );

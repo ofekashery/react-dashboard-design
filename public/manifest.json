@@ -1,14 +1,14 @@
 {
-  "short_name": "Vercel",
-  "name": "Vercel Dashboard Template",
+  "short_name": "Dashboard",
+  "name": "React Dashboard Design",
   "icons": [
     {
-      "src": "https://assets.zeit.co/image/upload/v1573246280/front/favicon/round-2/android-chrome-192x192.png",
+      "src": "https://react-dashboard-design.vercel.app/assets/icon192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://assets.zeit.co/image/upload/v1573246280/front/favicon/round-2/android-chrome-512x512.png",
+      "src": "https://react-dashboard-design.vercel.app/assets/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }

@@ -1,6 +1,6 @@
 {
-  "name": "vercel-dashboard-template",
-  "description": "Vercel (formerly ZEIT) Admin Dashboard Template",
+  "name": "react-dashboard-design",
+  "description": "Admin Dashboard inspired by and based on the by Vercel™ Design System.",
   "version": "0.1.0",
   "author": "Ofek Ashery",
   "license": "MIT",
@@ -13,13 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ofekashery/vercel-dashboard-template.git"
+    "url": "git+https://github.com/ofekashery/react-dashboard-design.git"
   },
   "bugs": {
-    "url": "https://github.com/ofekashery/vercel-dashboard-template/issues"
+    "url": "https://github.com/ofekashery/react-dashboard-design/issues"
   },
   "dependencies": {
-    "@ofekashery/vercel-icons": "^1.0.1",
     "@zeit-ui/react": "1.0.0-rc.1",
     "cra-template-typescript": "1.0.3",
     "eslint-config-prettier": "^6.10.1",
@@ -27,8 +26,9 @@
     "prettier": "^2.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
     "react-jss": "^10.1.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "styled-jsx": "^3.2.5"
   },
   "devDependencies": {

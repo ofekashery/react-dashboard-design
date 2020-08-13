@@ -74,13 +74,9 @@ const Content = () => {
       <div className={classes.content}>
         <div className={classes.row}>
           <div className={classes.projects}>
-            <ProjectCard
-              projectId="vercel-dashboard-template"
-              repo="ofekashery/vercel-dashboard-template"
-              created="4m"
-            />
-            <ProjectCard projectId="zeit-style" repo="zeit-ui/react" created="2d" />
-            <ProjectCard projectId="docs" repo="zeit/docs" created="5d" />
+            <ProjectCard projectId="react-dashboard-design" repo="ofekashery/react-dashboard-design" created="4m" />
+            <ProjectCard projectId="personal-website" repo="ofekashery/personal-website" created="2d" />
+            <ProjectCard projectId="docs" repo="github/docs" created="5d" />
             <Text className={classes.viewAll}>
               <Link color pure>
                 View All Projects
@@ -91,19 +87,19 @@ const Content = () => {
             <Text h2 className={classes.activityTitle}>
               Recent Activity
             </Text>
-            <EventListItem username="ofekashery" created="4m">
-              Ofek deployed vercel-dashboard-template to <b>production</b>
+            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="4m">
+              You deployed react-dashboard-design to <b>production</b>
             </EventListItem>
-            <EventListItem username="evilrabbit" created="2d">
-              You deployed zeit-ui to <b>production</b>
+            <EventListItem username="dependabot" avatar="/assets/dependabot.png" created="2d">
+              Dependabot deployed docs to <b>docs-git-dependabot-npmelliptic-653.vercel.app</b>
             </EventListItem>
-            <EventListItem username="evilrabbit" created="3d">
-              You deployed zeit-ui to <b>production</b>
+            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="3d">
+              You deployed personal-website to <b>production</b>
             </EventListItem>
-            <EventListItem username="evilrabbit" created="9d">
-              You deployed zeit-ui to <b>personal-website</b>
+            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="9d">
+              You deployed personal-website to <b>production</b>
             </EventListItem>
-            <EventListItem username="evilrabbit" created="9d">
+            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="9d">
               You created project <b>personal-website</b>
             </EventListItem>
             <Text className={classes.viewAll}>
