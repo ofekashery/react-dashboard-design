@@ -2,7 +2,7 @@
 
 ## React Dashboard Design
 
-This project inspired by and based on the by [Vercel™](https://vercel.com) Design System.
+This project inspired by and based on the [Vercel™](https://vercel.com) Design System.
 
 ## Getting Started
 
