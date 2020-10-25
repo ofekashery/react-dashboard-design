@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZeitUIThemes, Avatar, Text } from '@zeit-ui/react';
+import { GeistUIThemes, Avatar, Text } from '@geist-ui/react';
 import makeStyles from '../makeStyles';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   children: string | React.ReactNode;
 }
 
-const useStyles = makeStyles((ui: ZeitUIThemes) => ({
+const useStyles = makeStyles((ui: GeistUIThemes) => ({
   root: {
     borderBottom: `solid 1px ${ui.palette.accents_2}`,
     padding: '10px 0px',

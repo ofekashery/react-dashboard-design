@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ZEITUIProvider, CSSBaseline } from '@zeit-ui/react';
+import { GeistProvider, CssBaseline } from '@geist-ui/react';
 import ReactDOM from 'react-dom';
 import Dashboard from './Dashboard';
 import * as serviceWorker from './serviceWorker';
@@ -19,10 +19,10 @@ const App = () => {
 
   return (
     <JssProvider id={{ minify: true }}>
-      <ZEITUIProvider theme={{ type: themeType }}>
-        <CSSBaseline />
+      <GeistProvider theme={{ type: themeType }}>
+        <CssBaseline />
         <Dashboard toggleDarkMode={toggleDarkMode} />
-      </ZEITUIProvider>
+      </GeistProvider>
     </JssProvider>
   );
 };
