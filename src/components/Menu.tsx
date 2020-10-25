@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ZeitUIThemes, Avatar, Button, Tabs, useTheme, Popover, Link } from '@zeit-ui/react';
+import { GeistUIThemes, Avatar, Button, Tabs, useTheme, Popover, Link } from '@geist-ui/react';
 import makeStyles from '../makeStyles';
 import * as Icons from 'react-feather';
 
-const useStyles = makeStyles((ui: ZeitUIThemes) => ({
+const useStyles = makeStyles((ui: GeistUIThemes) => ({
   header: {
     width: ui.layout.pageWidthWithMargin,
     maxWidth: '100%',

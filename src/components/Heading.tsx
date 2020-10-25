@@ -1,9 +1,9 @@
 import React from 'react';
-import { ZeitUIThemes, Avatar, Button, Text, Link } from '@zeit-ui/react';
+import { GeistUIThemes, Avatar, Button, Text, Link } from '@geist-ui/react';
 import makeStyles from '../makeStyles';
 import * as Icons from 'react-feather';
 
-const useStyles = makeStyles((ui: ZeitUIThemes) => ({
+const useStyles = makeStyles((ui: GeistUIThemes) => ({
   root: {
     borderBottom: `solid 1px ${ui.palette.accents_2}`
   },
@@ -67,7 +67,7 @@ const Heading = () => {
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        <Avatar alt="Your Avatar" className={classes.avatar} src="/assets/avatar.svg" />
+        <Avatar alt="Your Avatar" className={classes.avatar} src="/assets/avatar.png" />
         <div className={classes.name}>
           <div className={classes.title}>
             <Text h2 className={classes.username}>

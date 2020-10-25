@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZeitUIThemes, Button, Text, Link, Card, Dot, Tag } from '@zeit-ui/react';
+import { GeistUIThemes, Button, Text, Link, Card, Dot, Tag } from '@geist-ui/react';
 import makeStyles from '../makeStyles';
 import * as Icons from 'react-feather';
 
@@ -9,7 +9,7 @@ interface Props {
   repo: string;
 }
 
-const useStyles = makeStyles((ui: ZeitUIThemes) => ({
+const useStyles = makeStyles((ui: GeistUIThemes) => ({
   card: {
     padding: '0 !important',
     marginBottom: `calc(${ui.layout.gap}*1.5) !important`

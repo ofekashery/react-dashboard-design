@@ -1,10 +1,10 @@
 import React from 'react';
-import { ZeitUIThemes, Text, Link } from '@zeit-ui/react';
+import { GeistUIThemes, Text, Link } from '@geist-ui/react';
 import makeStyles from '../makeStyles';
 import EventListItem from './EventListItem';
 import ProjectCard from './ProjectCard';
 
-const useStyles = makeStyles((ui: ZeitUIThemes) => ({
+const useStyles = makeStyles((ui: GeistUIThemes) => ({
   root: {
     backgroundColor: ui.palette.accents_1
   },
@@ -87,19 +87,19 @@ const Content = () => {
             <Text h2 className={classes.activityTitle}>
               Recent Activity
             </Text>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="4m">
+            <EventListItem username="ofekashery" avatar="/assets/avatar.png" created="4m">
               You deployed react-dashboard-design to <b>production</b>
             </EventListItem>
             <EventListItem username="dependabot" avatar="/assets/dependabot.png" created="2d">
               Dependabot deployed docs to <b>docs-git-dependabot-npmelliptic-653.vercel.app</b>
             </EventListItem>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="3d">
+            <EventListItem username="ofekashery" avatar="/assets/avatar.png" created="3d">
               You deployed personal-website to <b>production</b>
             </EventListItem>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="9d">
+            <EventListItem username="ofekashery" avatar="/assets/avatar.png" created="9d">
               You deployed personal-website to <b>production</b>
             </EventListItem>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.svg" created="9d">
+            <EventListItem username="ofekashery" avatar="/assets/avatar.png" created="9d">
               You created project <b>personal-website</b>
             </EventListItem>
             <Text className={classes.viewAll}>
