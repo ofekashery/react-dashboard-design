@@ -13,10 +13,10 @@ const App = () => {
   const toggleDarkMode = (): void => setThemeType(themeType === 'dark' ? 'light' : 'dark');
 
   useEffect(() => {
-  if (window.matchMedia) {
-    const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    colorSchemeQuery.onchange = (e) => setThemeType(e.matches ? 'dark' : 'light');
-  }
+    if (window.matchMedia) {
+      const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      colorSchemeQuery.onchange = (e) => setThemeType(e.matches ? 'dark' : 'light');
+    }
   }, [] )
 
   return (
