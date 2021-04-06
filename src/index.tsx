@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GeistProvider, CssBaseline } from '@geist-ui/react';
 import ReactDOM from 'react-dom';
 import Dashboard from './Dashboard';
@@ -12,10 +12,12 @@ const App = () => {
   const [themeType, setThemeType] = useState<'light' | 'dark'>(getDefaultTheme());
   const toggleDarkMode = (): void => setThemeType(themeType === 'dark' ? 'light' : 'dark');
 
-  if (window.matchMedia) {
-    const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    colorSchemeQuery.onchange = (e) => setThemeType(e.matches ? 'dark' : 'light');
-  }
+  useEffect(() => {
+    if (window.matchMedia) {
+      const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      colorSchemeQuery.onchange = (e) => setThemeType(e.matches ? 'dark' : 'light');
+    }
+  }, [] )
 
   return (
     <JssProvider id={{ minify: true }}>
