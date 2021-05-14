@@ -5,11 +5,9 @@
   "author": "Ofek Ashery",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --ext js,ts,tsx src"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -19,41 +17,15 @@
     "url": "https://github.com/ofekashery/react-dashboard-design/issues"
   },
   "dependencies": {
-    "@geist-ui/react": "^2.1.0-canary.1",
-    "cra-template-typescript": "1.0.3",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
+    "@geist-ui/react": "^v2.2.0-rc.0",
+    "next": "^10.2.0",
     "prettier": "^2.0.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-feather": "^2.0.8",
-    "react-jss": "^10.1.1",
-    "react-scripts": "^3.4.3",
-    "styled-jsx": "^3.2.5"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-feather": "^2.0.8"
   },
   "devDependencies": {
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.31",
-    "@types/react": "^16.9.26",
-    "@types/react-dom": "^16.9.5",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "typescript": "^3.7.5"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@types/react": "^17.0.5",
+    "typescript": "^4.2.4"
   }
 }

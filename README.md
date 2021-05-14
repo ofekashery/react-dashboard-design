@@ -8,7 +8,7 @@ This project inspired by and based on the [Vercel™](https://vercel.com) Design
 
 ```sh
 $ npm install
-$ npm start
+$ npm run dev
 ```
 
 Then head over to [localhost:3000](http://localhost:3000) to see the dashboard live!
