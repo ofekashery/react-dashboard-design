@@ -15,9 +15,9 @@ const Submenu: React.FC = () => {
 
   return (
     <>
-      <nav className="sub-menu__wrapper">
-        <div className={`sub-menu ${sticky ? 'sub-menu_sticky' : ''}`}>
-          <div className="sub-menu__inner">
+      <nav className="submenu__wrapper">
+        <div className={`submenu ${sticky ? 'submenu_sticky' : ''}`}>
+          <div className="submenu__inner">
             <Tabs value={router.asPath} onChange={(route) => router.push(route)}>
               <Tabs.Item label="Overview" value="/" />
               <Tabs.Item label="Projects" value="/projects" />
@@ -31,22 +31,27 @@ const Submenu: React.FC = () => {
         </div>
       </nav>
       <style jsx>{`
-        .sub-menu__wrapper {
+        .submenu__wrapper {
           height: 48px;
           position: relative;
           overflow: hidden;
           box-shadow: inset 0 -1px ${theme.palette.border};
         }
-        .sub-menu_sticky {
+        .submenu_sticky {
+          transition: box-shadow 0.2s ease;
+        }
+        .submenu_sticky {
           position: fixed;
           z-index: 1100;
           top: 0;
           right: 0;
           left: 0;
           background: ${theme.palette.background};
-          box-shadow: rgba(0, 0, 0, 0.1) 0 0 15px 0;
+          box-shadow: ${theme.type === 'dark'
+            ? `inset 0 -1px ${theme.palette.border}`
+            : 'rgba(0, 0, 0, 0.1) 0 0 15px 0'};
         }
-        .sub-menu__inner {
+        .submenu__inner {
           display: flex;
           width: ${theme.layout.pageWidthWithMargin};
           max-width: 100%;
@@ -62,28 +67,28 @@ const Submenu: React.FC = () => {
           scrollbar-width: none;
           box-sizing: border-box;
         }
-        .sub-menu__inner::-webkit-scrollbar {
+        .submenu__inner::-webkit-scrollbar {
           display: none;
         }
-        .sub-menu__inner :global(.content) {
+        .submenu__inner :global(.content) {
           display: none;
         }
-        .sub-menu__inner :global(.tabs),
-        .sub-menu__inner :global(header) {
+        .submenu__inner :global(.tabs),
+        .submenu__inner :global(header) {
           height: 100%;
           border: none;
         }
-        .sub-menu__inner :global(.tab) {
+        .submenu__inner :global(.tab) {
           height: calc(100% - 2px);
           padding-top: 0;
           padding-bottom: 0;
           color: ${theme.palette.accents_5};
           font-size: 0.875rem;
         }
-        .sub-menu__inner :global(.tab):hover {
+        .submenu__inner :global(.tab):hover {
           color: ${theme.palette.foreground};
         }
-        .sub-menu__inner :global(.active) {
+        .submenu__inner :global(.active) {
           color: ${theme.palette.foreground};
         }
       `}</style>
