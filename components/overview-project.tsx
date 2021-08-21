@@ -19,7 +19,7 @@ const OverviewProject: React.FC<OverviewProjectProps> = ({ projectId, createdAt,
         <Card className="project__card" shadow>
           <div className="project__title">
             <Text h3>{projectId}</Text>
-            <Button className="project__visit-button" size="small" auto>
+            <Button className="project__visit-button" height={0.8} auto>
               Visit
             </Button>
           </div>
