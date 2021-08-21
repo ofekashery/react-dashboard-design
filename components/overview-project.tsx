@@ -8,9 +8,9 @@ interface Props {
   repo: string;
 }
 
-export type ProjectProps = Props;
+export type OverviewProjectProps = Props;
 
-const Project: React.FC<ProjectProps> = ({ projectId, createdAt, repo }) => {
+const OverviewProject: React.FC<OverviewProjectProps> = ({ projectId, createdAt, repo }) => {
   const theme = useTheme();
 
   return (
@@ -120,4 +120,4 @@ const Project: React.FC<ProjectProps> = ({ projectId, createdAt, repo }) => {
   );
 };
 
-export default Project;
+export default OverviewProject;

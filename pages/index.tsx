@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { Text, Link, useTheme } from '@geist-ui/react';
 import Heading from '@/components/heading';
 import EventListItem from '@/components/activity-event';
-import Project from '@/components/project';
+import OverviewProject from '@/components/overview-project';
 
 const Page = () => {
   const theme = useTheme();
@@ -14,9 +14,13 @@ const Page = () => {
       <div className="page__wrapper">
         <div className="page__content">
           <div className="projects">
-            <Project projectId="react-dashboard-design" repo="ofekashery/react-dashboard-design" createdAt="4m" />
-            <Project projectId="personal-website" repo="ofekashery/personal-website" createdAt="2d" />
-            <Project projectId="docs" repo="github/docs" createdAt="5d" />
+            <OverviewProject
+              projectId="react-dashboard-design"
+              repo="ofekashery/react-dashboard-design"
+              createdAt="4m"
+            />
+            <OverviewProject projectId="personal-website" repo="ofekashery/personal-website" createdAt="2d" />
+            <OverviewProject projectId="docs" repo="github/docs" createdAt="5d" />
             <NextLink href="/projects" passHref>
               <Link className="view-all" color underline>
                 View All Projects

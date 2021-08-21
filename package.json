@@ -17,7 +17,8 @@
     "url": "https://github.com/ofekashery/react-dashboard-design/issues"
   },
   "dependencies": {
-    "@geist-ui/react": "^v2.2.0-rc.0",
+    "@geist-ui/react": "^2.2.0",
+    "@geist-ui/react-icons": "^1.0.1",
     "next": "^11.1.0",
     "prettier": "^2.0.2",
     "react": "^17.0.2",
