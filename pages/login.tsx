@@ -1,25 +1,25 @@
-import { useState } from 'react'
-import { supabase } from '../lib/supabaseClient'
+import { useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 // import styles from '../styles/Auth.module.css'
 
 export default function Auth({}) {
-  const [loading, setLoading] = useState(false)
-  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('');
 
   const handleLogin = async (email: string) => {
     try {
-      setLoading(true)
-      const { error, user } = await supabase.auth.signIn({ email })
-      if (error) throw error
-      console.log('user', user)
-      alert('Check your email for the login link!')
+      setLoading(true);
+      const { error, user } = await supabase.auth.signIn({ email });
+      if (error) throw error;
+      console.log('user', user);
+      alert('Check your email for the login link!');
     } catch (error) {
-      console.log('Error thrown:', error.message)
-      alert(error.error_description || error.message)
+      console.log('Error thrown:', error.message);
+      alert(error.error_description || error.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="row">
@@ -44,8 +44,8 @@ export default function Auth({}) {
         <div>
           <button
             onClick={(e) => {
-              e.preventDefault()
-              handleLogin(email)
+              e.preventDefault();
+              handleLogin(email);
             }}
             className={'button block'}
             disabled={loading}
@@ -55,5 +55,5 @@ export default function Auth({}) {
         </div>
       </div>
     </div>
-  )
+  );
 }

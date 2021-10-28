@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "next dev",
     "envelope": "export SET NODE_OPTIONS=--openssl-legacy-provider",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build"
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "lint": "eslint --fix .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "repository": {
     "type": "git",
@@ -20,14 +22,29 @@
     "@geist-ui/react": "^2.2.0",
     "@geist-ui/react-icons": "^1.0.1",
     "@supabase/supabase-js": "^1.25.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "next": "^11.1.1",
-    "prettier": "^2.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.8"
   },
   "devDependencies": {
+    "@types/node": "^16.4.0",
     "@types/react": "^17.0.5",
-    "typescript": "^4.2.4"
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.31.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.3.6",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.2.6",
+    "typescript": "^4.3.5",
+    "vercel": "^23.1.2"
   }
 }

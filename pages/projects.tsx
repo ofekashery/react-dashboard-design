@@ -30,7 +30,7 @@ const Page = () => {
                 framework="next"
                 git={{
                   repo: 'ofekashery/react-dashboard-design',
-                  commitMessage: 'Bump version'
+                  commitMessage: 'Bump version',
                 }}
                 updatedAt="4m"
               />
@@ -42,7 +42,7 @@ const Page = () => {
                 productionHostname="ofek.ashery.me"
                 git={{
                   repo: 'ofekashery/personal-website',
-                  commitMessage: 'Improve homepage layout on smaller screens'
+                  commitMessage: 'Improve homepage layout on smaller screens',
                 }}
                 updatedAt="2d"
               />
@@ -57,7 +57,7 @@ const Page = () => {
                 productionHostname="react.geist-ui.dev"
                 git={{
                   repo: 'geist-org/react',
-                  commitMessage: 'chore: release v2.2.0'
+                  commitMessage: 'chore: release v2.2.0',
                 }}
                 updatedAt="8d"
               />
@@ -69,7 +69,7 @@ const Page = () => {
                 productionHostname="github.blog"
                 git={{
                   repo: 'github/blog',
-                  commitMessage: 'Fix font-size in footer'
+                  commitMessage: 'Fix font-size in footer',
                 }}
                 updatedAt="8d"
               />

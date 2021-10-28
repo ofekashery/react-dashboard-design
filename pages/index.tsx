@@ -11,7 +11,6 @@ import { Profile } from '../lib/constants';
 import Auth from '../components/Auth';
 import Account from '../components/Account';
 
-
 const Page = () => {
   const theme = useTheme();
 
@@ -48,27 +47,24 @@ const Page = () => {
       console.log('error', error.message);
     }
   }
-  if ( !session )
-    return (
-      <Auth />
-    )
+  if (!session) return <Auth />;
 
   return (
     <>
-    <div className="page__wrapper">
+      <div className="page__wrapper">
         <div className="page__content">
-    <div className="container" style={{padding: '50px 0 100px 0'}}>
-        <div className="row">
-          <div className="col-6">
-            <h3>Account</h3>
-            <Account key={session.user.id} session={session} />
-          </div>
-          <div className="col-6">
-            <h3>Public Profiles</h3>
+          <div className="container" style={{ padding: '50px 0 100px 0' }}>
+            <div className="row">
+              <div className="col-6">
+                <h3>Account</h3>
+                <Account key={session.user.id} session={session} />
+              </div>
+              <div className="col-6">
+                <h3>Public Profiles</h3>
+              </div>
+            </div>
           </div>
         </div>
-    </div>
-    </div>
       </div>
       <style jsx>{`
         .page__wrapper {

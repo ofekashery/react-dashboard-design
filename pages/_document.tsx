@@ -14,7 +14,7 @@ class MyDocument extends Document {
           {initialProps.styles}
           {styles}
         </>
-      )
+      ),
     };
   }
 
@@ -35,7 +35,7 @@ class MyDocument extends Document {
                 document.documentElement.style.background = '#fff';
                 document.body.style.background = '#fff';
               }
-            })()`
+            })()`,
             }}
           />
           <Main />

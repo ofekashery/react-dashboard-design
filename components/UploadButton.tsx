@@ -1,9 +1,9 @@
-import { ChangeEventHandler } from 'react'
+import { ChangeEventHandler } from 'react';
 
 export type UploadButtonProps = {
-  onUpload: ChangeEventHandler<HTMLInputElement>
-  loading: boolean
-}
+  onUpload: ChangeEventHandler<HTMLInputElement>;
+  loading: boolean;
+};
 
 export default function UploadButton(props: UploadButtonProps) {
   return (
@@ -23,5 +23,5 @@ export default function UploadButton(props: UploadButtonProps) {
         disabled={props.loading}
       />
     </div>
-  )
+  );
 }

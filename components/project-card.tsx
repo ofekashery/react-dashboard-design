@@ -15,7 +15,13 @@ interface Props {
 
 export type ProjectCardProps = Props;
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ projectId, productionHostname, updatedAt, git, framework }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  projectId,
+  productionHostname,
+  updatedAt,
+  git,
+  framework,
+}) => {
   const theme = useTheme();
 
   return (
@@ -34,7 +40,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectId, productionHostname
               <Text margin={0} style={{ fontWeight: 500, lineHeight: '1.5rem' }}>
                 {projectId}
               </Text>
-              <Text margin={0} font="0.875rem" style={{ color: theme.palette.accents_6, lineHeight: '1.25rem' }}>
+              <Text
+                margin={0}
+                font="0.875rem"
+                style={{ color: theme.palette.accents_6, lineHeight: '1.25rem' }}
+              >
                 {productionHostname || `${projectId}.vercel.app`}
               </Text>
             </div>
@@ -59,7 +69,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectId, productionHostname
                   height="1rem"
                   width="1rem"
                   strokeWidth={2}
-                  style={{ verticalAlign: 'middle', marginLeft: `calc(${theme.layout.unit} * 0.375)` }}
+                  style={{
+                    verticalAlign: 'middle',
+                    marginLeft: `calc(${theme.layout.unit} * 0.375)`,
+                  }}
                 />
               </>
             )}
@@ -71,7 +84,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectId, productionHostname
           width: 100%;
         }
         .project__wrapper :global(.project__card) {
-          box-shadow: ${theme.type === 'dark' ? theme.expressiveness.shadowSmall : '0px 2px 4px rgba(0,0,0,0.1)'};
+          box-shadow: ${theme.type === 'dark'
+            ? theme.expressiveness.shadowSmall
+            : '0px 2px 4px rgba(0,0,0,0.1)'};
         }
         .project__wrapper :global(.project__card):hover {
           box-shadow: ${theme.type === 'dark'
