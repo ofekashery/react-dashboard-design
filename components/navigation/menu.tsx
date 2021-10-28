@@ -1,18 +1,59 @@
-import React from 'react';
-import { Avatar, Button, useTheme, Popover } from '@geist-ui/react';
+import React, { useState, useEffect, ChangeEvent } from 'react'
+import { Button, useTheme, Popover } from '@geist-ui/react';
 import * as Icons from 'react-feather';
 import Submenu from '@/components/navigation/submenu';
 import UserSettings from '@/components/navigation/user-settings';
 import { usePrefers } from '@/lib/use-prefers';
+import { supabase } from '@/lib/supabaseClient';
+import { AuthSession } from '@supabase/supabase-js';
+import AvatarIcon from '@/components/Avatar'
+import { Profile } from '@/lib/constants'
 
-const Menu: React.FC = () => {
+export default function Menu({ session }: { session: AuthSession }) {
   const theme = useTheme();
   const prefers = usePrefers();
+  
+  // mulai
+  const [loading, setLoading] = useState<boolean>(true)
+  const [avatar, setAvatar] = useState<string | null>(null)
+
+  useEffect(() => {
+    getProfile()
+  }, [session])
+  
+  function setProfile(profile: Profile) {
+    setAvatar(profile.avatar_url)
+  }
+
+  async function getProfile() {
+    try {
+      setLoading(true)
+      const user = supabase.auth.user()
+
+      let { data, error } = await supabase
+        .from('profiles')
+        .select(`avatar_url`)
+        .eq('id', user!.id)
+        .single()
+
+      if (error) {
+        throw error
+      }
+
+      setProfile(data)
+    } catch (error) {
+      console.log('error', error.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // end
 
   return (
     <>
       <nav className="menu-nav">
-        <h1 className="menu-nav__title">React Dashboard Design</h1>
+        <h1 className="menu-nav__title">Pajak365</h1>
         <div>
           <Button
             aria-label="Toggle Dark mode"
@@ -25,7 +66,11 @@ const Menu: React.FC = () => {
           </Button>
           <Popover content={<UserSettings />} placement="bottomEnd" portalClassName="user-settings__popover">
             <button className="user-settings__button">
-              <Avatar text="OA" />
+              {avatar ? (
+              <AvatarIcon url={avatar} size={40} />
+            ) : (
+              <div className="avatarPlaceholder">?</div>
+            )}
             </button>
           </Popover>
         </div>
@@ -79,5 +124,3 @@ const Menu: React.FC = () => {
     </>
   );
 };
-
-export default Menu;
