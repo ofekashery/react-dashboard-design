@@ -5,13 +5,13 @@ module.exports = {
     ecmaVersion: 2020, // Use the latest ecmascript standard
     sourceType: 'module', // Allows using import/export statements
     ecmaFeatures: {
-      jsx: true // Enable JSX since we're using React
+      jsx: true, // Enable JSX since we're using React
     },
   },
   parser: '@typescript-eslint/parser',
   settings: {
     react: {
-      version: 'detect' // Automatically detect the react version
+      version: 'detect', // Automatically detect the react version
     },
   },
   env: {
@@ -25,7 +25,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
+    'plugin:prettier/recommended', // Make this the last element so prettier config overrides other formatting rules
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
