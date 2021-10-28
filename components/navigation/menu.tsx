@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react'
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Button, useTheme, Popover } from '@geist-ui/react';
 import * as Icons from 'react-feather';
 import Submenu from '@/components/navigation/submenu';
@@ -6,45 +6,45 @@ import UserSettings from '@/components/navigation/user-settings';
 import { usePrefers } from '@/lib/use-prefers';
 import { supabase } from '@/lib/supabaseClient';
 import { AuthSession } from '@supabase/supabase-js';
-import AvatarIcon from '@/components/Avatar'
-import { Profile } from '@/lib/constants'
+import AvatarIcon from '@/components/Avatar';
+import { Profile } from '@/lib/constants';
 
 export default function Menu({ session }: { session: AuthSession }) {
   const theme = useTheme();
   const prefers = usePrefers();
-  
+
   // mulai
-  const [loading, setLoading] = useState<boolean>(true)
-  const [avatar, setAvatar] = useState<string | null>(null)
+  const [loading, setLoading] = useState<boolean>(true);
+  const [avatar, setAvatar] = useState<string | null>(null);
 
   useEffect(() => {
-    getProfile()
-  }, [session])
-  
+    getProfile();
+  }, [session]);
+
   function setProfile(profile: Profile) {
-    setAvatar(profile.avatar_url)
+    setAvatar(profile.avatar_url);
   }
 
   async function getProfile() {
     try {
-      setLoading(true)
-      const user = supabase.auth.user()
+      setLoading(true);
+      const user = supabase.auth.user();
 
-      let { data, error } = await supabase
+      const { data, error } = await supabase
         .from('profiles')
         .select(`avatar_url`)
         .eq('id', user!.id)
-        .single()
+        .single();
 
       if (error) {
-        throw error
+        throw error;
       }
 
-      setProfile(data)
+      setProfile(data);
     } catch (error) {
-      console.log('error', error.message)
+      console.log('error', error.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
 
@@ -64,13 +64,17 @@ export default function Menu({ session }: { session: AuthSession }) {
           >
             {theme.type === 'dark' ? <Icons.Sun size={16} /> : <Icons.Moon size={16} />}
           </Button>
-          <Popover content={<UserSettings />} placement="bottomEnd" portalClassName="user-settings__popover">
+          <Popover
+            content={<UserSettings />}
+            placement="bottomEnd"
+            portalClassName="user-settings__popover"
+          >
             <button className="user-settings__button">
               {avatar ? (
-              <AvatarIcon url={avatar} size={40} />
-            ) : (
-              <div className="avatarPlaceholder">?</div>
-            )}
+                <AvatarIcon url={avatar} size={40} />
+              ) : (
+                <div className="avatarPlaceholder">?</div>
+              )}
             </button>
           </Popover>
         </div>
@@ -123,4 +127,4 @@ export default function Menu({ session }: { session: AuthSession }) {
       `}</style>
     </>
   );
-};
+}

@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react'
-import { supabase } from '../lib/supabaseClient'
-import { DEFAULT_AVATARS_BUCKET } from '../lib/constants'
-import { Avatar } from '@geist-ui/react'
+import { useEffect, useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
+import { DEFAULT_AVATARS_BUCKET } from '../lib/constants';
+import { Avatar } from '@geist-ui/react';
 
 export default function AvatarIcon({ url, size }: { url: string | null; size: number }) {
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    if (url) downloadImage(url)
-  }, [url])
+    if (url) downloadImage(url);
+  }, [url]);
 
   async function downloadImage(path: string) {
     try {
-      const { data, error } = await supabase.storage.from(DEFAULT_AVATARS_BUCKET).download(path)
+      const { data, error } = await supabase.storage.from(DEFAULT_AVATARS_BUCKET).download(path);
       if (error) {
-        throw error
+        throw error;
       }
-      const url = URL.createObjectURL(data)
-      setAvatarUrl(url)
+      const url = URL.createObjectURL(data);
+      setAvatarUrl(url);
     } catch (error) {
-      console.log('Error downloading image: ', error.message)
+      console.log('Error downloading image: ', error.message);
     }
   }
 
@@ -27,5 +27,5 @@ export default function AvatarIcon({ url, size }: { url: string | null; size: nu
     <img src={avatarUrl} className="avatar image" style={{ height: size, width: size }} />
   ) : (
     <div className="avatar no-image" style={{ height: size, width: size }} />
-  )
+  );
 }

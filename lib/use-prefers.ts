@@ -10,7 +10,7 @@ interface Prefers {
 
 export const PrefersContext = createContext<Prefers>({
   themeType: 'dark',
-  switchTheme: () => {}
+  switchTheme: () => {},
 });
 
 export const usePrefers = (): Prefers => useContext(PrefersContext);

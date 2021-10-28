@@ -19,7 +19,8 @@ const DashboardApp = ({ Component, pageProps }: AppProps) => {
 
   const switchTheme = useCallback((theme: ThemeType) => {
     setThemeType(theme);
-    if (typeof window !== 'undefined' && window.localStorage) window.localStorage.setItem('theme', theme);
+    if (typeof window !== 'undefined' && window.localStorage)
+      window.localStorage.setItem('theme', theme);
   }, []);
 
   return (
