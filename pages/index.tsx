@@ -4,59 +4,76 @@ import { Text, Link, useTheme } from '@geist-ui/react';
 import Heading from '@/components/heading';
 import EventListItem from '@/components/activity-event';
 import OverviewProject from '@/components/overview-project';
+import { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabaseClient';
+import { AuthSession } from '@supabase/supabase-js';
+import { Profile } from '../lib/constants';
+import Auth from '../components/Auth';
+import Account from '../components/Account';
+
 
 const Page = () => {
   const theme = useTheme();
 
+  const [session, setSession] = useState<AuthSession | null>(null);
+  const [profiles, setProfiles] = useState<Profile[]>([]);
+
+  // console.log(session)
+
+  useEffect(() => {
+    setSession(supabase.auth.session());
+
+    supabase.auth.onAuthStateChange((_event: string, session: AuthSession | null) => {
+      setSession(session);
+    });
+  }, []);
+
+  useEffect(() => {
+    getPublicProfiles();
+  }, []);
+
+  async function getPublicProfiles() {
+    try {
+      const { data, error } = await supabase
+        .from<Profile>('profiles')
+        .select('avatar_url, website, updated_at')
+        .order('updated_at', { ascending: false });
+
+      if (error || !data) {
+        throw error || new Error('No data');
+      }
+      // console.log('Public profiles:', data);
+      setProfiles(data);
+    } catch (error) {
+      console.log('error', error.message);
+    }
+  }
+  if ( !session )
+    return (
+      <Auth />
+    )
+
   return (
     <>
-      <Heading user={{ name: 'Ofek Ashery', role: 'Admin', github: 'ofekashery' }} />
-      <div className="page__wrapper">
+    <div className="page__wrapper">
         <div className="page__content">
-          <div className="projects">
-            <OverviewProject
-              projectId="react-dashboard-design"
-              repo="ofekashery/react-dashboard-design"
-              createdAt="4m"
-            />
-            <OverviewProject projectId="personal-website" repo="ofekashery/personal-website" createdAt="2d" />
-            <OverviewProject projectId="docs" repo="github/docs" createdAt="5d" />
-            <NextLink href="/projects" passHref>
-              <Link className="view-all" color underline>
-                View All Projects
-              </Link>
-            </NextLink>
+    <div className="container" style={{padding: '50px 0 100px 0'}}>
+        <div className="row">
+          <div className="col-6">
+            <h3>Account</h3>
+            <Account key={session.user.id} session={session} />
           </div>
-          <div className="recent-activity">
-            <Text h2 className="recent-activity__title">
-              Recent Activity
-            </Text>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.png" createdAt="4m">
-              You deployed react-dashboard-design to <b>production</b>
-            </EventListItem>
-            <EventListItem username="dependabot" avatar="/assets/dependabot.png" createdAt="2d">
-              Dependabot deployed docs to <b>docs-git-dependabot-npmelliptic-653.vercel.app</b>
-            </EventListItem>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.png" createdAt="3d">
-              You deployed personal-website to <b>production</b>
-            </EventListItem>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.png" createdAt="9d">
-              You deployed personal-website to <b>production</b>
-            </EventListItem>
-            <EventListItem username="ofekashery" avatar="/assets/avatar.png" createdAt="9d">
-              You created project <b>personal-website</b>
-            </EventListItem>
-            <NextLink href="/activity" passHref>
-              <Link className="view-all" color underline>
-                View All Activity
-              </Link>
-            </NextLink>
+          <div className="col-6">
+            <h3>Public Profiles</h3>
           </div>
         </div>
+    </div>
+    </div>
       </div>
       <style jsx>{`
         .page__wrapper {
           background-color: ${theme.palette.accents_1};
+          min-height: calc(100vh - 172px);
         }
         .page__content {
           display: flex;
@@ -65,42 +82,18 @@ const Page = () => {
           width: ${theme.layout.pageWidthWithMargin};
           max-width: 100%;
           margin: 0 auto;
-          padding: 0 ${theme.layout.pageMargin};
-          transform: translateY(-35px);
+          padding: calc(${theme.layout.unit} * 2) ${theme.layout.pageMargin};
           box-sizing: border-box;
         }
-        .projects {
-          width: 540px;
-          max-width: 100%;
-          margin-right: calc(4 * ${theme.layout.gap});
+        .actions-stack {
+          display: flex;
+          width: 100%;
         }
-        .projects :global(.project__wrapper):not(:last-of-type) {
-          margin-bottom: calc(1.5 * ${theme.layout.gap});
+        .actions-stack :global(.input-wrapper) {
+          background-color: ${theme.palette.background};
         }
-        .recent-activity {
-          flex: 1;
-        }
-        .recent-activity :global(.recent-activity__title) {
-          font-size: 0.875rem;
-          font-weight: 700;
-          margin: 0 0 calc(3 * ${theme.layout.gapHalf});
-        }
-        .page__content :global(.view-all) {
-          font-size: 0.875rem;
-          font-weight: 700;
-          margin: calc(1.5 * ${theme.layout.gap}) 0;
-          text-align: center;
-        }
-        @media (max-width: ${theme.breakpoints.sm.max}) {
-          .page__content {
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: stretch;
-          }
-          .projects {
-            width: 100%;
-            margin-right: unset;
-          }
+        .actions-stack :global(input) {
+          font-size: 14px;
         }
       `}</style>
     </>

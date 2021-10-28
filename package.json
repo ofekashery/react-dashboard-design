@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "envelope": "export SET NODE_OPTIONS=--openssl-legacy-provider",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@geist-ui/react": "^2.2.0",
     "@geist-ui/react-icons": "^1.0.1",
+    "@supabase/supabase-js": "^1.25.1",
     "next": "^11.1.1",
     "prettier": "^2.0.2",
     "react": "^17.0.2",
