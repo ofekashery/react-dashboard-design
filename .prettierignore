@@ -1,0 +1,13 @@
+# See https://prettier.io/docs/en/ignore.html for more about ignoring files.
+
+# dependencies
+/node_modules
+/.idea
+
+# next.js
+/public
+/.next
+next-env.d.ts
+
+# supabase
+/supabase/types.ts
