@@ -155,7 +155,7 @@ export default function Account({ session }: { session: AuthSession }) {
 
             <Fieldset.Footer>
               <Text>An avatar is optional</Text>
-              <Button auto b type="secondary-light">
+              <Button auto type="secondary-light" disabled>
                 Save
               </Button>
             </Fieldset.Footer>
@@ -193,7 +193,6 @@ export default function Account({ session }: { session: AuthSession }) {
                 onClick={() => updateProfile()}
                 disabled={loading}
                 auto
-                b
                 type="secondary-light"
               >
                 {loading ? 'Loading ...' : 'Save'}
