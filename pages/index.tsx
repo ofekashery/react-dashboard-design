@@ -1,9 +1,6 @@
 import React from 'react';
-import NextLink from 'next/link';
-import { Text, Link, useTheme } from '@geist-ui/react';
+import { useTheme } from '@geist-ui/react';
 import Heading from '@/components/heading';
-import EventListItem from '@/components/activity-event';
-import OverviewProject from '@/components/overview-project';
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { AuthSession } from '@supabase/supabase-js';
@@ -51,6 +48,8 @@ const Page = () => {
 
   return (
     <>
+      <Heading head={{ name: 'Personal Account Settings', role: 'Admin' }} />
+
       <div className="page__wrapper">
         <div className="page__content">
           <div className="container" style={{ padding: '50px 0 100px 0' }}>
